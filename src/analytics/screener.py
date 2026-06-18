@@ -31,6 +31,7 @@ def get_latest_ratios():
     latest_fcf = latest_per_company(fcf, "free_cash_flow_cr")
 
     result = companies[["id", "company_name"]].rename(columns={"id": "company_id"})
+    result["company_name"] = result["company_name"].astype(str).str.replace("\n", " ").str.strip()
     result["company_name"] = result["company_name"].astype(str).str.replace(chr(10), " ", regex=False).str.strip()
     result = result.merge(latest_npm, on="company_id", how="left")
     result = result.merge(latest_roe, on="company_id", how="left")

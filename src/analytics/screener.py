@@ -52,11 +52,69 @@ def screen_quality_compounder(latest):
     result = result.sort_values("roe_pct", ascending=False)
     return result[["company_id", "company_name", "broad_sector", "roe_pct", "debt_to_equity", "free_cash_flow_cr"]]
 
+def add_valuation_data(latest):
+    """Bring in latest P/E ratio and dividend yield from market_cap table."""
+    conn = sqlite3.connect(DB_PATH)
+    market_cap = load_table("market_cap", conn)
+    conn.close()
+
+    market_cap = market_cap.sort_values("year")
+    latest_val = market_cap.groupby("company_id").last().reset_index()
+    latest_val = latest_val[["company_id", "pe_ratio", "dividend_yield_pct"]]
+
+    return latest.merge(latest_val, on="company_id", how="left")
+
+def screen_value_pick(latest):
+    """Preset: P/E < 20, P/B not available here so using D/E < 2.0, Div Yield > 1%"""
+    mask = (
+        (latest["pe_ratio"] < 20) &
+        (latest["debt_to_equity"] < 2.0) &
+        (latest["dividend_yield_pct"] > 1)
+    )
+    result = latest[mask].copy().sort_values("pe_ratio")
+    return result[["company_id", "company_name", "pe_ratio", "debt_to_equity", "dividend_yield_pct"]]
+
+def screen_dividend_champion(latest):
+    """Preset: Dividend Yield > 2%, FCF > 0"""
+    mask = (
+        (latest["dividend_yield_pct"] > 2) &
+        (latest["free_cash_flow_cr"] > 0)
+    )
+    result = latest[mask].copy().sort_values("dividend_yield_pct", ascending=False)
+    return result[["company_id", "company_name", "dividend_yield_pct", "free_cash_flow_cr"]]
+
+def screen_debt_free_blue_chip(latest):
+    """Preset: D/E < 0.05 (essentially debt-free), ROE > 12%"""
+    mask = (
+        (latest["debt_to_equity"] < 0.05) &
+        (latest["roe_pct"] > 12)
+    )
+    result = latest[mask].copy().sort_values("roe_pct", ascending=False)
+    return result[["company_id", "company_name", "broad_sector", "roe_pct", "debt_to_equity"]]
+
+def screen_turnaround_watch(latest):
+    """Preset: FCF > 0 (simplified - full version needs 3yr revenue CAGR, added later)"""
+    mask = (latest["free_cash_flow_cr"] > 0) & (latest["net_profit_margin_pct"] < 5)
+    result = latest[mask].copy().sort_values("free_cash_flow_cr", ascending=False)
+    return result[["company_id", "company_name", "net_profit_margin_pct", "free_cash_flow_cr"]]
+
 if __name__ == "__main__":
     latest = get_latest_ratios()
+    latest = add_valuation_data(latest)
     print("Total companies with at least one ratio computed:", len(latest))
 
     quality = screen_quality_compounder(latest)
     print()
-    print(f"Quality Compounder screen: {len(quality)} companies match")
-    print(quality.head(15).to_string(index=False))
+    print(f"Quality Compounder: {len(quality)} companies match")
+
+    value = screen_value_pick(latest)
+    print(f"Value Pick: {len(value)} companies match")
+
+    dividend = screen_dividend_champion(latest)
+    print(f"Dividend Champion: {len(dividend)} companies match")
+
+    debtfree = screen_debt_free_blue_chip(latest)
+    print(f"Debt-Free Blue Chip: {len(debtfree)} companies match")
+
+    turnaround = screen_turnaround_watch(latest)
+    print(f"Turnaround Watch: {len(turnaround)} companies match")

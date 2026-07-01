@@ -1,0 +1,49 @@
+company_id,company_name,broad_sector,alert_type,metric,value,threshold,severity
+ADANIENSOL,Adani Energy Solutions Ltd,Energy,Poor Health Score,health_score,21.76783768259098,35,CRITICAL
+ADANIENT,Adani Enterprises Ltd,Industrials,Negative FCF,free_cash_flow_cr,-8455.0,0,CAUTION
+ADANIENT,Adani Enterprises Ltd,Industrials,Poor Health Score,health_score,13.171397077112758,35,CRITICAL
+ADANIGREEN,Adani Green Energy Ltd,Energy,High Debt,debt_to_equity,6.375756429652042,3,WARNING
+ADANIGREEN,Adani Green Energy Ltd,Energy,Negative FCF,free_cash_flow_cr,-13347.0,0,CAUTION
+ADANIGREEN,Adani Green Energy Ltd,Energy,Poor Health Score,health_score,29.720648997639717,35,CRITICAL
+AMBUJACEM,Ambuja Cements Ltd,Materials,Negative FCF,free_cash_flow_cr,-3295.0,0,CAUTION
+APOLLOHOSP,Apollo Hospitals Chain of Indian private hospitals,Healthcare,Poor Health Score,health_score,29.222815126576727,35,CRITICAL
+AXISBANK,Axis Bank Ltd,Financials,Negative FCF,free_cash_flow_cr,-14556.0,0,CAUTION
+BAJAJFINSV,Bajaj Finserv Ltd,Financials,Negative FCF,free_cash_flow_cr,-79634.0,0,CAUTION
+BAJFINANCE,Bajaj Finance Ltd,Financials,Negative FCF,free_cash_flow_cr,-79931.0,0,CAUTION
+BANKBARODA,Bank of Baroda,Financials,Negative FCF,free_cash_flow_cr,-7559.0,0,CAUTION
+BEL,Bharat Electronics Ltd,Industrials,Negative FCF,free_cash_flow_cr,-1265.0,0,CAUTION
+BHEL,Bharat Heavy Electricals Limited,Industrials,Low ROE,roe_pct,1.1539405843358703,5,WARNING
+BHEL,Bharat Heavy Electricals Limited,Industrials,Negative FCF,free_cash_flow_cr,-2382.0,0,CAUTION
+BHEL,Bharat Heavy Electricals Limited,Industrials,Poor Health Score,health_score,17.279436895948862,35,CRITICAL
+CHOLAFIN,Cholamandalam Investment & Finance Company Ltd,Financials,Negative FCF,free_cash_flow_cr,-38538.0,0,CAUTION
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,Low ROE,roe_pct,-4.45308779171297,5,WARNING
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,Negative FCF,free_cash_flow_cr,-1365.0,0,CAUTION
+GODREJCP,Godrej Consumer Products Ltd,Consumer Staples,Poor Health Score,health_score,17.749570084694657,35,CRITICAL
+GRASIM,Grasim Industries Ltd,Industrials,Negative FCF,free_cash_flow_cr,-33833.0,0,CAUTION
+GRASIM,Grasim Industries Ltd,Industrials,Poor Health Score,health_score,16.26562413323527,35,CRITICAL
+HDFCLIFE,HDFC Life Insurance Company Ltd,Financials,Negative FCF,free_cash_flow_cr,-2893.0,0,CAUTION
+INDIGO,Interglobe Aviation Ltd,Consumer Discretionary,Low ROE,roe_pct,-40.7979407979408,5,WARNING
+INDUSINDBK,IndusInd Bank Ltd,Financials,Negative FCF,free_cash_flow_cr,-17468.0,0,CAUTION
+JINDALSTEL,Jindal Steel & Power Ltd,Materials,Negative FCF,free_cash_flow_cr,-2336.0,0,CAUTION
+JIOFIN,Jio Financial Services Ltd,Financials,Low ROE,roe_pct,1.153456416595399,5,WARNING
+JSWENERGY,JSW Energy Ltd,Energy,Negative FCF,free_cash_flow_cr,-1963.0,0,CAUTION
+JSWENERGY,JSW Energy Ltd,Energy,Poor Health Score,health_score,29.94110026108072,35,CRITICAL
+JSWSTEEL,JSW Steel Ltd,Materials,Negative FCF,free_cash_flow_cr,-2389.0,0,CAUTION
+JSWSTEEL,JSW Steel Ltd,Materials,Poor Health Score,health_score,18.436280378146524,35,CRITICAL
+LODHA,Macrotech Developers Ltd,Real Estate,Negative FCF,free_cash_flow_cr,-435.0,0,CAUTION
+M&M,Mahindra & Mahindra Ltd,Consumer Discretionary,Negative FCF,free_cash_flow_cr,-11245.0,0,CAUTION
+M&M,Mahindra & Mahindra Ltd,Consumer Discretionary,Poor Health Score,health_score,33.23593358278263,35,CRITICAL
+MOTHERSON,Samvardhana Motherson International Ltd,Consumer Discretionary,Poor Health Score,health_score,27.86588431923068,35,CRITICAL
+NAUKRI,Info Edge (India) Ltd,Communication Services,Low ROE,roe_pct,1.9661621835965897,5,WARNING
+NAUKRI,Info Edge (India) Ltd,Communication Services,Negative FCF,free_cash_flow_cr,-150.0,0,CAUTION
+PFC,Power Finance Corporation Ltd,Financials,Negative FCF,free_cash_flow_cr,-101229.0,0,CAUTION
+PNB,Punjab National Bank,Financials,Negative FCF,free_cash_flow_cr,-29445.0,0,CAUTION
+RECLTD,REC Ltd,Financials,Negative FCF,free_cash_flow_cr,-59554.0,0,CAUTION
+SBILIFE,SBI Life Insurance Company Ltd,Financials,Negative FCF,free_cash_flow_cr,-2099.0,0,CAUTION
+SHRIRAMFIN,Shriram Finance Ltd,Financials,Negative FCF,free_cash_flow_cr,-31359.0,0,CAUTION
+TATACONSUM,Tata Consumer Products Ltd,Consumer Staples,Poor Health Score,health_score,28.301821123022883,35,CRITICAL
+TATAPOWER,Tata Power Company Ltd,Energy,Poor Health Score,health_score,34.94354286000598,35,CRITICAL
+TATASTEEL,Tata Steel Ltd,Materials,Low ROE,roe_pct,-5.334926929972293,5,WARNING
+TATASTEEL,Tata Steel Ltd,Materials,Poor Health Score,health_score,22.863996449731673,35,CRITICAL
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,Negative FCF,free_cash_flow_cr,-2254.0,0,CAUTION
+TVSMOTOR,TVS Motor Company Ltd,Consumer Discretionary,Poor Health Score,health_score,34.722518972641105,35,CRITICAL
